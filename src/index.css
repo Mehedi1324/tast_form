@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+span.rdrDayNumber {
+  font-weight: 600;
+}
+
+.rdrMonthName {
+  text-align: left;
+  color: black;
+  padding: 0.833em;
+  font-weight: bold;
+}
