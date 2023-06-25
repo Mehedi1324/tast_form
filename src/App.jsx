@@ -7,6 +7,8 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRange } from 'react-date-range';
 import SearchBar from './Components/SearchBar';
 import Travelers from './Components/Travelers';
+import useData from './Context/useData';
+import { travelersData } from './Context/DataProvider';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,6 +19,8 @@ function App() {
       key: 'selection',
     },
   ]);
+
+  const { roomNumber, totalTravelers } = travelersData();
 
   // Modal showing statements__________________________________
   const [showDatePicker, setShowDatePicker] = useState(false);
@@ -107,7 +111,7 @@ function App() {
             <span>
               <p className="text-sm text-black/80">Travelers</p>
               <h2 className="font-semibold text-black/70">
-                2 travelers, 1 room
+                {totalTravelers} travelers, {roomNumber} room
               </h2>
             </span>
             {/*_________________________ select rooms and / member information _____________________________*/}
