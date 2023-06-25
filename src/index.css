@@ -12,3 +12,6 @@ span.rdrDayNumber {
   padding: 0.833em;
   font-weight: bold;
 }
+::-webkit-scrollbar {
+  display: none;
+}

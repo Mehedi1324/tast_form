@@ -26,26 +26,32 @@ function App() {
   // __________________________________________________________
 
   return (
-    <div className="w-[90%] md:w-[85%] shadow-lg mx-auto mt-10 border-gray-500/20 rounded-md p-5 border-[2px]">
+    <div
+      className="w-[90%] md:w-[85%]  
+    -lg mx-auto mt-10 border-gray-500/20 shadow-md rounded-md p-5 border-[2px]"
+    >
       <form action="">
         <div className="grid grid-cols-12 gap-4">
           {/*_________________________ Select Places_______________________ */}
 
-          <div
-            onClick={() => setShowSearchBar(!showSearchBar)}
-            className="flex relative cursor-pointer sm:col-span-7 lg:col-span-4 md:col-span-4 xs:col-span-12   px-2  space-x-1 items-center border-[1px] border-black/40 h-12 rounded-lg"
-          >
-            <FaMapMarkerAlt className="text-[22px]" /> <p>Going to</p>
+          <div className="flex  relative cursor-pointer sm:col-span-7 lg:col-span-4 md:col-span-4 xs:col-span-12   px-2  space-x-1 items-center border-[1px] border-black/40 h-12 rounded-lg">
+            <div
+              className="flex w-full space-x-2 "
+              onClick={() => setShowSearchBar(!showSearchBar)}
+            >
+              {' '}
+              <FaMapMarkerAlt className="text-[22px]" /> <p>Going to</p>
+            </div>
             {/*_________________________ Search bar / box______ _______________________*/}
             {showSearchBar && (
-              <div>
+              <div className="z-10">
                 <div className="shadow-lg border-[2px] border-gray-300 bg-slate-100 -top-1 -left-5 -right-3 min-h-[400px] rounded-lg absolute">
                   {' '}
                   <SearchBar />
                 </div>
                 <div
                   onClick={() => setShowSearchBar(false)}
-                  className="bg-black w-6 absolute cursor-pointer z-10 h-6 top-2 right-0"
+                  className="absolute right-0 z-10 w-6 h-6 bg-black cursor-pointer top-2"
                 >
                   ❌
                 </div>
@@ -58,7 +64,7 @@ function App() {
             data-modal-target="defaultModal"
             data-modal-toggle="defaultModal"
             onClick={() => setShowDatePicker(!showDatePicker)}
-            className="flex relative sm:col-span-5 cursor-pointer lg:col-span-3 md:col-span-4 xs:col-span-12  px-2  space-x-2 items-center border-[1px] border-black/40 h-12 rounded-lg"
+            className="flex  relative sm:col-span-5 cursor-pointer lg:col-span-3 md:col-span-4 xs:col-span-12  px-2  space-x-2 items-center border-[1px] border-black/40 h-12 rounded-lg"
           >
             <BiCalendar className="text-[22px]" />{' '}
             <span>
@@ -72,10 +78,10 @@ function App() {
 
           {/*__________________ Date range picker__________________ */}
           {showDatePicker && (
-            <div className="absolute md:top-[108px] xs:top-10 left-0 right-0 w-full flex justify-center mx-auto">
+            <div className="z-10 absolute md:top-[108px] xs:top-10 left-0 right-0 w-full flex justify-center mx-auto">
               <div
                 onClick={() => setShowDatePicker(false)}
-                className="bg-black w-6 -mr-6 cursor-pointer z-10 h-6"
+                className="z-10 w-6 h-6 -mr-6 bg-black cursor-pointer"
               >
                 ❌
               </div>
@@ -95,26 +101,26 @@ function App() {
 
           <div
             onClick={() => setShowTravelers(!showTravelers)}
-            className="flex sm:col-span-10 cursor-pointer md:col-span-4 lg:col-span-3 xs:col-span-12  px-2  space-x-2 items-center border-[1px] border-black/40 h-12 rounded-lg"
+            className="flex sm:col-span-10 cursor-pointer  md:col-span-4 lg:col-span-3 xs:col-span-12  px-2  space-x-2 items-center border-[1px] border-black/40  rounded-lg"
           >
             <BiSolidUser className="text-[22px]" />{' '}
             <span>
               <p className="text-sm text-black/80">Travelers</p>
-              <h2 className=" font-semibold text-black/70">
+              <h2 className="font-semibold text-black/70">
                 2 travelers, 1 room
               </h2>
             </span>
             {/*_________________________ select rooms and / member information _____________________________*/}
           </div>
           {showTravelers && (
-            <div className="absolute bg-black right-32 top-28">
+            <div className="absolute z-10 h-[100%] overflow-scroll bg-slate-100 p-1 right-[18%] lg:left-[52%] lg:right-[18%] md:left-[50%] md:top-28 md:right-16 sm:left-[7%] sm:right-40 xs:top-[5%] xs:left-3 xs:right-3 sm:top-[175px] xs:bottom-2 top-28">
               <div>
                 {' '}
                 <Travelers />
               </div>
               <div
                 onClick={() => setShowTravelers(false)}
-                className="bg-black w-6 absolute cursor-pointer z-10 h-6 top-2 right-0"
+                className="absolute right-0 z-10 w-6 h-6 bg-black cursor-pointer top-2"
               >
                 ❌
               </div>
@@ -125,7 +131,7 @@ function App() {
           <div className="sm:col-span-2 xs:col-span-12 ">
             <input
               type="submit"
-              className="bg-blue-700 font-semibold cursor-pointer text-md  text-white w-full h-12 rounded-lg"
+              className="w-full h-12 font-semibold text-white bg-blue-700 rounded-lg cursor-pointer text-md"
               value="Search"
             />
           </div>
